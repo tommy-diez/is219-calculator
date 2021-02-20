@@ -2,8 +2,8 @@ const Operations = require('./Operations/MathOperations');
 
 class Calculator {
 
-    Sum(a, b){
-        return(Operations.Sum(a, b));
+    sum(a, b){
+        return(Operations.sum(a, b));
     }
 
 }

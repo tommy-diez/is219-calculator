@@ -5,7 +5,7 @@ test('calculator adding two numbers', function(){
 
     let Calculator = new calculator();
 
-    let result = Calculator.Sum(1, 2);
+    let result = Calculator.sum(1, 2);
 
     expect(result).toBe(3);
 
