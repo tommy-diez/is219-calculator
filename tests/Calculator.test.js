@@ -41,3 +41,14 @@ test('calculator raising a number to another', function(){
     expect(result).toBe(8);
 
 });
+
+test('calculator history', function(){
+
+    let result = calculator.power(2, 3);
+    let result2 = calculator.sum(5, 5);
+    let history = calculator.history;
+    for(let x=0;x<history.length;x++){
+        console.log(history[x].getResults());
+    }
+
+});
