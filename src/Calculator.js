@@ -1,4 +1,9 @@
-const Operations = require('./Operations/MathOperations');
+const sum = require('./Operations/Sum');
+const subtract = require('./Operations/Subtract');
+const divide = require('./Operations/Divide');
+const multiply = require('./Operations/Multiply');
+const rootOf = require('./Operations/RootOf');
+const power = require('./Operations/Power');
 const Calculation = require('./Models/Calculation');
 
 class Calculator {
@@ -7,7 +12,7 @@ class Calculator {
 
     static sum(a, b){
 
-        let calculation = new Calculation(a, b, Operations.sum);
+        let calculation = new Calculation(a, b, sum);
         let result = calculation.getResults();
         this.history.push(calculation);
         return result;
@@ -16,7 +21,7 @@ class Calculator {
 
     static subtract(a, b){
 
-        let calculation = new Calculation(a, b, Operations.subtract);
+        let calculation = new Calculation(a, b, subtract);
         let result = calculation.getResults();
         this.history.push(calculation);
         return result;
@@ -25,7 +30,7 @@ class Calculator {
 
     static multiply (a, b){
 
-        let calculation = new Calculation(a, b, Operations.multiply);
+        let calculation = new Calculation(a, b, multiply);
         let result = calculation.getResults();
         this.history.push(calculation);
         return result;
@@ -34,7 +39,7 @@ class Calculator {
 
     static divide(a, b){
 
-        let calculation = new Calculation(a, b, Operations.divide);
+        let calculation = new Calculation(a, b, divide);
         let result = calculation.getResults();
         this.history.push(calculation);
         return result;
@@ -43,7 +48,7 @@ class Calculator {
 
     static rootOf(a, b){
 
-        let calculation = new Calculation(a, b, Operations.rootOf);
+        let calculation = new Calculation(a, b, rootOf);
         let result = calculation.getResults();
         this.history.push(calculation);
         return result;
@@ -52,7 +57,7 @@ class Calculator {
 
     static power(a, b){
 
-        let calculation = new Calculation(a, b, Operations.power);
+        let calculation = new Calculation(a, b, power);
         let result = calculation.getResults();
         this.history.push(calculation);
         return result;
