@@ -66,7 +66,7 @@ class Calculator {
 
     static clearHistory(){
 
-        history = [];
+        this.history = [];
 
     }
 
