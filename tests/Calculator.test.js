@@ -42,6 +42,16 @@ test('calculator raising a number to another', function(){
 
 });
 
+test('calculator erasing history', function(){
+
+    let result = calculator.power(2, 3);
+    let result2 = calculator.sum(5, 5);
+    calculator.clearHistory();
+    let history = calculator.history;
+    expect(history).toStrictEqual([]);
+
+});
+
 test('calculator history', function(){
 
     let result = calculator.power(2, 3);
