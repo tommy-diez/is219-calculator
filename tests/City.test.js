@@ -11,10 +11,18 @@ let city = {
     admin_name: "Baraka"
 };
 
-test('Instantiating object of city class', function(){
+test('Instantiating object of city class by factory method', function(){
 
     let newark = City.create(city);
     expect(newark).toBeInstanceOf(City);
+
+});
+
+test('Testing class constructor', function(){
+
+    let city = new City();
+    expect(city).toBeInstanceOf(City);
+    expect(city).toEqual({});
 
 });
 
