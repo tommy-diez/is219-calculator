@@ -20,15 +20,24 @@ class DescriptiveStatistics {
 
     static mode(arr) {
         let modes = [];
-        let numMap = {};
-        for(let x = 0; x < arr.length; x++){
-            let tempVal = arr[x];
-            if(tempVal in numMap){
-                numMap[tempVal]++;
-            } else {
-                numMap[tempVal] = 1;
+        let count = [];
+        let i;
+        let number;
+        let maxIndex = 0;
+        for (i = 0; i < arr.length; i += 1) {
+            number = arr[i];
+            count[number] = (count[number] || 0) + 1;
+            if (count[number] > maxIndex) {
+                maxIndex = count[number];
             }
         }
+        for (i in count)
+            if (count.hasOwnProperty(i)) {
+                if (count[i] === maxIndex) {
+                    modes.push(Number(i));
+                }
+            }
+        return modes;
     }
 
     static variance(arr) {
@@ -59,6 +68,34 @@ class DescriptiveStatistics {
         }
         return [DescriptiveStatistics.median(list1), DescriptiveStatistics.median(list2)];
     }
-    
 
+    static skewness() {
+
+    }
+
+    static sampleCorrelation() {
+
+    }
+
+    static populationCorrelation() {
+
+    }
+
+    static zscore(arr) {
+        let returnArr = [];
+        for(let val in arr){
+            returnArr.push((val-DescriptiveStatistics.mean(arr)/DescriptiveStatistics.standardDeviation(arr)));
+        }
+        return returnArr;
+    }
+
+    static meanDeviation(arr) {
+        let mean = DescriptiveStatistics.mean(arr);
+        let total = 0;
+        for (let val in arr) {
+            total += (Math.abs(val - mean));
+        }
+        return total / arr.length;
+    }
 }
+module.exports = DescriptiveStatistics; 
